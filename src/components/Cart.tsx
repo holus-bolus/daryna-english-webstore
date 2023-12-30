@@ -7,11 +7,15 @@ const Cart = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
 
-  const handleRemove = (id: number) => {
+  const handleRemove = (id: string) => {
     dispatch(removeProduct(id));
   };
 
-  const handleChangeQuantity = (id: number, quantity: number) => {
+  const totalPrice = cartItems.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+
+  const handleChangeQuantity = (id: string, quantity: number) => {
     if (quantity < 1) {
       dispatch(removeProduct(id));
     } else {
@@ -39,13 +43,16 @@ const Cart = () => {
                 min="1"
               />
             </p>
-            <p>Price: ${item.price}</p>
+            <p>Price: ₴{item.price}</p>
             <button
               className="btn btn-danger"
               onClick={() => handleRemove(item.id)}
             >
               Remove
             </button>
+          </div>
+          <div>
+            <strong>Total Price: </strong>₴{totalPrice.toFixed(2)}
           </div>
         </div>
       ))}

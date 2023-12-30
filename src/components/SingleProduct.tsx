@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../features/cart/cartSlice';
 import { CartItem, Product } from '../types';
+import './SingleProduct.css';
 
 type SingleProductProps = {
   product: Product;
@@ -22,12 +23,13 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
           src={product.imageUrl}
           className="card-img-top"
           alt={product.name}
+          style={{ height: '600px', objectFit: 'cover' }}
         />
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>
           <p className="card-text">{product.description}</p>
           <p className="card-text">
-            <strong>Price:</strong> ${product.price}
+            <strong>Price:</strong> ₴{product.price}
           </p>
           <button className="btn btn-primary" onClick={handleAddToCart}>
             Add to cart
