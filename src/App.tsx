@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Products from './components/Products.tsx';
 import Cart from './components/Cart.tsx';
 import AboutMe from './components/AboutMe.tsx';
-import NavigationMenu from './components/NavigationMenu.tsx';
+import Home from './components/Home.tsx';
 
 function App() {
   const router = createBrowserRouter([
@@ -11,7 +11,14 @@ function App() {
       path: '/',
       element: (
         <>
-          <NavigationMenu />
+          <Home />
+        </>
+      ),
+    },
+    {
+      path: '/about',
+      element: (
+        <>
           <AboutMe />
         </>
       ),
@@ -20,7 +27,6 @@ function App() {
       path: '/cart',
       element: (
         <>
-          <NavigationMenu />
           <Cart />
         </>
       ),
@@ -29,7 +35,6 @@ function App() {
       path: '/products',
       element: (
         <>
-          <NavigationMenu />
           <Products />
         </>
       ),

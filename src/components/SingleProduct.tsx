@@ -16,13 +16,25 @@ const SingleProduct: React.FC<SingleProductProps> = ({ product }) => {
   };
 
   return (
-    <li>
-      <img src={product.imageUrl} alt={product.name} />
-      <h3>{product.name}</h3>
-      <p>{product.description}</p>
-      <p>${product.price}</p>
-      <button onClick={handleAddToCart}>Add to cart</button>
-    </li>
+    <div className="col mb-4">
+      <div className="card h-100">
+        <img
+          src={product.imageUrl}
+          className="card-img-top"
+          alt={product.name}
+        />
+        <div className="card-body">
+          <h5 className="card-title">{product.name}</h5>
+          <p className="card-text">{product.description}</p>
+          <p className="card-text">
+            <strong>Price:</strong> ${product.price}
+          </p>
+          <button className="btn btn-primary" onClick={handleAddToCart}>
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
 

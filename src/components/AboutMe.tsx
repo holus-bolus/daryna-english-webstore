@@ -1,5 +1,12 @@
+import NavigationMenu from './NavigationMenu.tsx';
+
 const AboutMe = () => {
-  return <div>About me</div>;
+  return (
+    <>
+      <NavigationMenu />
+      <h1>About Me</h1>
+    </>
+  );
 };
 
 export default AboutMe;

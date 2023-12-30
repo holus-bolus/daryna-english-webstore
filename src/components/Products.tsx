@@ -5,16 +5,19 @@ import Cart from './Cart.tsx';
 
 const Products = () => {
   const products = useSelector((state: RootState) => state.products.items);
+
   return (
     <>
       <Cart />
-      <ul>
-        {products &&
-          products.map((product) => (
-            <SingleProduct key={product.id} product={product} />
-          ))}
-        {!products && <p>no products</p>}
-      </ul>
+      <div className="container">
+        <div className="row">
+          {products &&
+            products.map((product) => (
+              <SingleProduct key={product.id} product={product} />
+            ))}
+          {!products.length && <p>No products</p>}
+        </div>
+      </div>
     </>
   );
 };
