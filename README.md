@@ -1,5 +1,3 @@
-Certainly! A well-structured `README.md` is essential for any project, as it provides key information about the project to other developers and users. Below is a basic template for your `README.md`. You can customize it to fit the specific details of your project.
-
 ```markdown
 # Daryna's English Teaching Website
 
