@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../app/store.ts';
 import SingleProduct from './SingleProduct.tsx';
+import NavigationMenu from './NavigationMenu.tsx';
 
 const Products = () => {
   const products = useSelector((state: RootState) => state.products.items);
@@ -8,6 +9,7 @@ const Products = () => {
   return (
     <>
       <div className="container">
+        <NavigationMenu />
         <div className="row">
           {products &&
             products.map((product) => (
