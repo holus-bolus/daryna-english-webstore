@@ -51,11 +51,11 @@ const Cart = () => {
               Remove
             </button>
           </div>
-          <div>
-            <strong>Total Price: </strong>₴{totalPrice.toFixed(2)}
-          </div>
         </div>
       ))}
+      <div>
+        <strong>Total Price: </strong>₴{totalPrice.toFixed(2)}
+      </div>
     </div>
   );
 };

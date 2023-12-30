@@ -1,14 +1,12 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../app/store.ts';
 import SingleProduct from './SingleProduct.tsx';
-import Cart from './Cart.tsx';
 
 const Products = () => {
   const products = useSelector((state: RootState) => state.products.items);
 
   return (
     <>
-      <Cart />
       <div className="container">
         <div className="row">
           {products &&
