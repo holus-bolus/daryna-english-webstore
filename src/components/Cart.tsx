@@ -1,10 +1,5 @@
-
-const AboutMe = () => {
- return (
-  <div>
-   
-  </div>
- );
+const Cart = () => {
+  return <div></div>;
 };
 
-export default AboutMe;
+export default Cart;
